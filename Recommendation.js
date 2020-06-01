@@ -32,7 +32,7 @@ a.href = URL;  //  recommendation api url without title
 
 
 
-const omdbapi = 'http://www.omdbapi.com/?apikey=28a0ca92&s='
+const omdbapi = 'https://www.omdbapi.com/?apikey=28a0ca92&s='
 
 
 b  = document.createElement('a');
