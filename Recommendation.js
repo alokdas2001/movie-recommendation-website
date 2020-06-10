@@ -67,29 +67,35 @@ poster_search(movie);  // poster of movie you typed
 //USE OF FETCH IS TO READ FROM API
 
 //START OF RECOMMENDATION MOVIES
+
 fetch(URLwithoutGCLID)
 .then((res) => res.json())
 .then((data) => {
+
   let output =  "<h1>"+ "SIMILAR MOVIES TO"+ " "+ movie.toUpperCase()+" ";
+
   /*contains all movie name*/
   data.forEach(function(post){
  
    
+
    
-   
     
+
     
-    
-    str = post.Name.replaceAll(" " , "%20")
  
-     omdb_link = b + str   // omdb uri with recommendation
+
+ 
+    
+ 
+     omdb_link = b + post.Name   // omdb uri with recommendation
     
     
 
     
      poster(omdb_link)  // poster of recommendation
     
-    
+   
   });
   
 
@@ -99,7 +105,7 @@ fetch(URLwithoutGCLID)
  
 })
 
-.catch((err) => console.log("NOT FOUND"))
+.catch((err) => console.log(error))
 //END OF RECOMMENDATION MOVIES
 
 
@@ -121,8 +127,8 @@ function poster(omdb_link){
   .then(function(data){
     data = JSON.stringify(data)
     data=JSON.parse(data)
-    console.log(data.Search[0].Title); 
-    console.log(data.Search[0].imdbID);  // manipulate this
+   
+    //console.log(data.Search[0].imdbID);  // manipulate this
     
    
     document.getElementById('rec_poster').innerHTML +=   "<ul> <li><img src= '"+data.Search[0].Poster+"'> <li></ul>"; // poster of recommendation src
