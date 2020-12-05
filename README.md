@@ -1,3 +1,3 @@
 # movie-recommendation-website
 
-A simple movie recommendation system for a limited database of Hollywood movies using Html, CSS and JavaScript.
+A simple movie recommendation website with a limited database of Hollywood movies using Html, CSS and JavaScript.
